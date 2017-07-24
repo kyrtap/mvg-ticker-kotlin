@@ -6,20 +6,13 @@ class Transport {
     }
 
     fun getTransportType(input: String): Type {
-        if (input.startsWith("U"))
-            return Type.UBAHN
-        else if (input.startsWith("S"))
-            return Type.SBAHN
-        else if (input.startsWith("X"))
-            return Type.BUS
-        else if (input.startsWith("N"))
-            return Type.BUS
-        else {
-            val number = Integer.parseInt(input)
-            if (number < 30)
-                return Type.TRAM
-            else
-                return Type.BUS
+        when {
+            input.startsWith("U") -> return Type.UBAHN
+            input.startsWith("S") -> return Type.SBAHN
+            input.startsWith("X") -> return Type.BUS
+            input.startsWith("N") -> return Type.BUS
+            Integer.parseInt(input) < 30 -> return Type.TRAM
+            else -> return Type.BUS
         }
     }
 }
