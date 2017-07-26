@@ -12,4 +12,8 @@ class DateHandler {
     fun formatDate(date: Date, format: String): String {
         return SimpleDateFormat(format).format(date)
     }
+
+    fun getDifference(date1: Date, date2: Date): Int {
+        return ((date1.getTime()/60000) - (date2.getTime()/60000)).toInt()
+    }
 }
