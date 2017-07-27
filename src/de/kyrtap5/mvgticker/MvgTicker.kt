@@ -4,7 +4,7 @@ import org.jsoup.Jsoup
 import java.net.URLEncoder
 import java.util.*
 
-class MVGTicker(val station: String) {
+class MvgTicker(val station: String) {
     infix fun Date.addOffset(minuteOffset: Int): Date {
         val cal = Calendar.getInstance()
         cal.add(Calendar.MINUTE, minuteOffset)
