@@ -5,9 +5,6 @@ You can use MVG Ticker to get the upcoming departures from the desired bus/tram/
 ## How can I use it?
 Example usage:
 ```
-ArrayList<Departure> deps = new MvgTicker("Hauptbahnhof").getDepartures(true, true, true, true);
-
-for (Departure d : deps) {
-    System.out.println(d.toString());
-}
+val deps = MvgTicker("Hauptbahnhof").getDepartures()
+for (d in deps) println(d.toString())
 ```
