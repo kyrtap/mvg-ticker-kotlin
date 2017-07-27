@@ -19,6 +19,8 @@ class MvgTicker(val station: String) {
         if (bus) url += "&bus=checked"
 
         val doc = Jsoup.connect(url).get()
+        if (doc.select("td:contains(Es wurde kein Bahnhof mit diesem Namen gefunden.)").first() != null)
+            throw Exception("Station not found")
         val content = doc.select("table").get(0)
         val rows = content.select("tbody").select("tr")
         val ret = ArrayList<Departure>()
